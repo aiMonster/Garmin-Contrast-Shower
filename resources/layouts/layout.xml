@@ -1,0 +1,29 @@
+<layout id="MainLayout">
+    <label
+        id="type_title"
+        text="COLD"
+        x="center"
+        y="55"
+        font="Gfx.FONT_MEDIUM"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+        color="Gfx.COLOR_BLUE"
+    />
+    <label
+        id="current_timer"
+        text="0:30"
+        x="center"
+        y="center"
+        font="Gfx.FONT_NUMBER_THAI_HOT"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+        color="Gfx.COLOR_WHITE"
+    />
+    <label
+        id="cylcles_left"
+        text="5 cycles left"
+        x="center"
+        y="170"
+        font="Gfx.FONT_SMALL"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+        color="Gfx.COLOR_WHITE"
+    />
+</layout>
