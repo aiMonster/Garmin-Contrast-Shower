@@ -8,6 +8,8 @@ class HCShowerDelegate extends WatchUi.BehaviorDelegate {
     private var _view = getView();
     private var _timer;
 
+    private var _inProgress = false;
+
     private var cycles = [
         new WaterCycle(WaterType.Hot, 30),
         new WaterCycle(WaterType.Cold, 30),
@@ -26,7 +28,11 @@ class HCShowerDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onSelect() as Boolean {
-        startCountdown();
+        if (_inProgress == false) {
+            _inProgress = true;
+            startCountdown();
+        }
+        
         return true;
     }
 
@@ -51,6 +57,8 @@ class HCShowerDelegate extends WatchUi.BehaviorDelegate {
             callAttention();
             _view.setTimerValue(0);
             _timer.stop();
+            _inProgress = false;
+
             return;
             // TODO: Show completed icon
         }

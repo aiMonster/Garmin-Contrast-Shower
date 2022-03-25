@@ -48,9 +48,8 @@ class HCShowerView extends WatchUi.View {
     function onHide() as Void {
     }
 
-    function setCyclesValue(value as Number) as Void {
-        var multipleSign = value == 1 ? "" : "s";
-        var formattedValue = value.toString() + " cycle" + multipleSign + " left";
+    function setCyclesValue(cycles as Number) as Void {
+        var formattedValue = formatCycles(cycles);
         _cylclesLeftElement.setText(formattedValue);
 
         WatchUi.requestUpdate();
@@ -70,7 +69,6 @@ class HCShowerView extends WatchUi.View {
 
     function setTimerValue(value as Number) as Void {
         var current = formatTime(value/60, value%60);
-
         _currentTimerElement.setText(current);
 
         WatchUi.requestUpdate();
@@ -79,5 +77,10 @@ class HCShowerView extends WatchUi.View {
     private function formatTime(minutes as Number, seconds as Number) as String {
         var secondsFormatted = seconds > 9 ? seconds.toString() : "0" + seconds.toString();
         return minutes.toString() + ":" + secondsFormatted;
+    }
+
+    private function formatCycles(cycles as Number) as String {
+        var multipleSign = cycles == 1 ? "" : "s";
+        return cycles.toString() + " cycle" + multipleSign + " left";
     }
 }
