@@ -1,4 +1,4 @@
-# Garmin-Contrast-Shower
+# Garmin Contrast Shower watch application
 An application for Garmin watches to take a contrast shower
 
 Use Visual Studio Code an Monkey C plugin.
