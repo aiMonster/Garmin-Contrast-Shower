@@ -1,18 +1,11 @@
-import Toybox.Graphics;
 import Toybox.WatchUi;
-import Toybox.System;
 
 class HCShowerView extends WatchUi.View {
-    private var COLD_TITLE = "COLD";
-    private var COLD_COLOR = Graphics.COLOR_BLUE;
-
-    private var HOT_TITLE = "HOT";
-    private var HOT_COLOR = Graphics.COLOR_DK_RED;
-
     private var _typeTitleElement;
     private var _currentTimerElement;
     private var _cylclesLeftElement;
 
+    // Constructor
     function initialize() {
         View.initialize();
     }
@@ -30,10 +23,11 @@ class HCShowerView extends WatchUi.View {
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() as Void {
-        // TODO: Should be taken from some configs
-        setWaterTypeValue(WaterType.Hot);
-        setCyclesValue(6);
-        setTimerValue(30);
+        var firstCycle = CyclesManager.getCycleByIndex(0);
+
+        setTimerValue(firstCycle.duration);
+        setWaterTypeValue(firstCycle.waterType);
+        setCyclesValue(CyclesManager.getCyclesCount());
     }
 
     // Update the view
@@ -48,39 +42,30 @@ class HCShowerView extends WatchUi.View {
     function onHide() as Void {
     }
 
+    // Updates cycles value on the view
     function setCyclesValue(cycles as Number) as Void {
-        var formattedValue = formatCycles(cycles);
+        var formattedValue = CyclesViewManager.formatCycles(cycles);
         _cylclesLeftElement.setText(formattedValue);
 
         WatchUi.requestUpdate();
     }
 
+    // Updates water type value on the view
     function setWaterTypeValue(waterType as WaterType) as Void {
-        if (waterType == WaterType.Hot) {
-            _typeTitleElement.setText(HOT_TITLE);
-            _typeTitleElement.setColor(HOT_COLOR);
-        } else if (waterType == WaterType.Cold) {
-            _typeTitleElement.setText(COLD_TITLE);
-            _typeTitleElement.setColor(COLD_COLOR);
-        }
+        var label = CyclesViewManager.getTypeLabel(waterType);
+        var color = CyclesViewManager.getTypeColor(waterType);
+
+        _typeTitleElement.setText(label);
+        _typeTitleElement.setColor(color);
 
         WatchUi.requestUpdate();
     }
 
+    // Updates timer value on the view
     function setTimerValue(value as Number) as Void {
-        var current = formatTime(value/60, value%60);
+        var current = CyclesViewManager.formatTime(value/60, value%60);
         _currentTimerElement.setText(current);
 
         WatchUi.requestUpdate();
-    }
-
-    private function formatTime(minutes as Number, seconds as Number) as String {
-        var secondsFormatted = seconds > 9 ? seconds.toString() : "0" + seconds.toString();
-        return minutes.toString() + ":" + secondsFormatted;
-    }
-
-    private function formatCycles(cycles as Number) as String {
-        var multipleSign = cycles == 1 ? "" : "s";
-        return cycles.toString() + " cycle" + multipleSign + " left";
     }
 }
