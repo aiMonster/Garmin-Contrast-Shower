@@ -2,6 +2,7 @@
 An application for Garmin watches to take a contrast shower
 
 # Version History
+0.1.1 - Move cycles and view operations to the separate managers
 0.1.0 - Initial mvp version
 
 # Future features
