@@ -12,14 +12,6 @@ class CyclesManager {
         return cycles.size();
     }
 
-    static function getFirstCycleDuration() as Number {
-        return cycles[0].duration;
-    }
-
-    static function getFirstCycleType() as WaterType {
-        return cycles[0].waterType;
-    }
-
     static function getCycleByIndex(index as Number) as WaterCycle {
         return cycles[index];
     }
