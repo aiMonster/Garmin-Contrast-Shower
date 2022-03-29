@@ -20,6 +20,12 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
         BehaviorDelegate.initialize();
     }
 
+    // On Menu click
+    function onMenu() as Boolean {
+        WatchUi.pushView(new MainMenu().getView(), new MainMenuViewDelegate(), WatchUi.SLIDE_UP);
+        return true;
+    }
+
     // On Select button click
     function onSelect() as Boolean {
         if (_inProgress == false) {
