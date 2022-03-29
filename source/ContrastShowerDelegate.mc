@@ -4,7 +4,7 @@ import Toybox.System;
 import Toybox.Attention;
 import Toybox.Timer;
 
-class HCShowerDelegate extends WatchUi.BehaviorDelegate {
+class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
     private var _view = getView();
     private var _timer;
 

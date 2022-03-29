@@ -3,7 +3,7 @@ import Toybox.Lang;
 import Toybox.WatchUi;
 import Toybox.System;
 
-class HCShowerApp extends Application.AppBase {
+class ContrastShowerApp extends Application.AppBase {
     private var _view;
 
     function initialize() {
@@ -20,9 +20,9 @@ class HCShowerApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        _view = new HCShowerView();
+        _view = new ContrastShowerView();
 
-        return [_view, new HCShowerDelegate() ] as Array<Views or InputDelegates>;
+        return [_view, new ContrastShowerDelegate() ] as Array<Views or InputDelegates>;
     }
 
     // Returns main view instance
@@ -32,11 +32,11 @@ class HCShowerApp extends Application.AppBase {
 }
 
 // Returns application instance
-function getApp() as HCShowerApp {
-    return Application.getApp() as HCShowerApp;
+function getApp() as ContrastShowerApp {
+    return Application.getApp() as ContrastShowerApp;
 }
 
 // Returns main view instance
-function getView() as HCShowerView {
+function getView() as ContrastShowerView {
     return Application.getApp().getView();
 }

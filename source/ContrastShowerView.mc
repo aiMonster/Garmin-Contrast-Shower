@@ -1,6 +1,6 @@
 import Toybox.WatchUi;
 
-class HCShowerView extends WatchUi.View {
+class ContrastShowerView extends WatchUi.View {
     private var _typeTitleElement;
     private var _currentTimerElement;
     private var _cylclesLeftElement;
