@@ -1,38 +1,30 @@
+import Toybox.Application;
+
 class CyclesManager {
-    private static var _hotDuration = 35;
-    private static var _coldDuration = 25;
-    private static var _cycles = 6;
-
-    private static var cycles = [
-        new WaterCycle(WaterType.Hot, 30),
-        new WaterCycle(WaterType.Cold, 30),
-        new WaterCycle(WaterType.Hot, 30),
-        new WaterCycle(WaterType.Cold, 30),
-        new WaterCycle(WaterType.Hot, 30),
-        new WaterCycle(WaterType.Cold, 30)
-    ];
-
     static function getCycleByIndex(index as Number) as WaterCycle {
-        return cycles[index];
+        var waterType = index % 2 == 0 ? WaterType.Hot : WaterType.Cold;
+        var duration = getCycleDuration(waterType); 
+
+        return new WaterCycle(waterType, duration);
     }
 
     static function getCycleDuration(waterType) {
-        return waterType == WaterType.Hot ? _hotDuration : _coldDuration;
+        var key = waterType == WaterType.Hot ? "hotDuration" : "coldDuration";
+
+        return Application.Properties.getValue(key);
     }
 
     static function setCycleDuration(waterType, duration) {
-        if (waterType == WaterType.Hot) {
-            _hotDuration = duration;
-        } else {
-            _coldDuration = duration;
-        }
+        var key = waterType == WaterType.Hot ? "hotDuration" : "coldDuration";
+        
+        Application.Properties.setValue(key, duration);
     }
 
     static function getCyclesCount() {
-        return _cycles;
+        return Application.Properties.getValue("cyclesCount");
     }
 
     static function setCyclesCount(count) {
-        _cycles = count;
+        Application.Properties.setValue("cyclesCount", count);
     }
 }
