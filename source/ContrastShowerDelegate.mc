@@ -3,9 +3,11 @@ import Toybox.WatchUi;
 import Toybox.System;
 import Toybox.Attention;
 import Toybox.Timer;
+import Toybox.ActivityRecording;
 
 class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
     private var _view = getView();
+    private var _session as Session?;
     private var _timer;
 
     private var _inProgress = false;
@@ -30,6 +32,10 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
     function onSelect() as Boolean {
         if (_inProgress == false) {
             _inProgress = true;
+
+            _session = ActivityRecording.createSession({:name=>"Contrast Shower", :sport=>ActivityRecording.SPORT_GENERIC});
+            _session.start();
+
             startCountdown();
         }
         
@@ -59,6 +65,11 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
             _view.setTimerValue(0);
 
             _timer.stop();
+
+            _session.stop();
+            _session.save();
+            _session = null;
+
             _inProgress = false;
 
             // TODO: Show completed icon
@@ -68,6 +79,7 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
         // If its the last tick in the cycle
         if (_currentDuration == 0) {
             callAttention();
+            _session.addLap();
             _currentCycle++;
 
             var cycle = CyclesManager.getCycleByIndex(_currentCycle);
