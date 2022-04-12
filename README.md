@@ -2,6 +2,7 @@
 An application for Garmin watches to take a contrast shower
 
 # Version History
+0.3.0 - Now an activity is recording  
 0.2.0 - Added possibility to edit configurations  
 0.1.1 - Moved cycles and view operations to the separate managers  
 0.1.0 - Initial mvp version
@@ -14,7 +15,8 @@ An application for Garmin watches to take a contrast shower
 * Shorten vibration between cycles
 * Refactor code
 * Add done icon when completed
-* Increment cycles by 2
+* Display Save/Discard after completed
+* Configure first cycle type
 
 # Local set up
 Use Visual Studio Code and Monkey C plugin
