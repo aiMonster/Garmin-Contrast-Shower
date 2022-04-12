@@ -2,6 +2,7 @@
 An application for Garmin watches to take a contrast shower
 
 # Version History
+0.4.0 - Added possibility to disable activity recording  
 0.3.0 - Now an activity is recording  
 0.2.0 - Added possibility to edit configurations  
 0.1.1 - Moved cycles and view operations to the separate managers  
