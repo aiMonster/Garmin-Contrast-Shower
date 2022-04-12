@@ -1,6 +1,7 @@
 <properties>
     <property id="appVersion" type="string">0.3.0</property>
     <property id="cyclesCount" type="number">6</property>
-    <property id="hotDuration" type="number">35</property>
-    <property id="coldDuration" type="number">25</property>
+    <property id="hotDuration" type="number">30</property>
+    <property id="coldDuration" type="number">30</property>
+    <property id="recordActivity" type="boolean">true</property>
 </properties>

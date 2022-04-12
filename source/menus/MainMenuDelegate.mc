@@ -13,6 +13,11 @@ class MainMenuViewDelegate extends WatchUi.Menu2InputDelegate {
     function onSelect(item as MenuItem) as Void {
         var id = item.getId().toString();
 
+        if (id.equals("record_activity")) {
+            ActivityManager.setRecordActivityFlag(item.isEnabled());
+            return;
+        }
+
         var label = null, color = null, initialValue = null, callback = null;
         var showSeconds = false;
 

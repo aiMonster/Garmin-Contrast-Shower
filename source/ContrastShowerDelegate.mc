@@ -33,9 +33,11 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
         if (_inProgress == false) {
             _inProgress = true;
 
-            _session = ActivityRecording.createSession({:name=>"Contrast Shower", :sport=>ActivityRecording.SPORT_GENERIC});
-            _session.start();
-
+            if (ActivityManager.getRecordActivityFlag()) {
+                _session = ActivityRecording.createSession({:name=>"Contrast Shower", :sport=>ActivityRecording.SPORT_GENERIC});
+                _session.start();
+            }
+            
             startCountdown();
         }
         
@@ -66,9 +68,11 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
             _timer.stop();
 
-            _session.stop();
-            _session.save();
-            _session = null;
+            if(_session) {
+                _session.stop();
+                _session.save();
+                _session = null;
+            }
 
             _inProgress = false;
 
@@ -79,9 +83,12 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
         // If its the last tick in the cycle
         if (_currentDuration == 0) {
             callAttention();
-            _session.addLap();
             _currentCycle++;
 
+            if(_session) {
+                _session.addLap();
+            }
+            
             var cycle = CyclesManager.getCycleByIndex(_currentCycle);
 
             _view.setCyclesValue(_cyclesCount - _currentCycle - 1);
