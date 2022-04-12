@@ -15,7 +15,8 @@ An application for Garmin watches to take a contrast shower
 * Shorten vibration between cycles
 * Refactor code
 * Add done icon when completed
-* Increment cycles by 2
+* Display Save/Discard after completed
+* Configure first cycle type
 
 # Local set up
 Use Visual Studio Code and Monkey C plugin
