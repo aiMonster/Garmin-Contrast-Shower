@@ -2,6 +2,7 @@
 An application for Garmin watches to take a contrast shower
 
 # Version History
+1.1.0 - Added completed view  
 **1.0.2 - Initial public version**  
 0.4.0 - Added possibility to disable activity recording  
 0.3.0 - Now an activity is recording  
@@ -10,13 +11,11 @@ An application for Garmin watches to take a contrast shower
 0.1.0 - Initial mvp version
 
 # Future features
-* Possibility to publish your activity, so it could be tracked
 * Smart plans (e.g. if whole week without missing, switch to the second cycles regime)
 
 # Fututure bugfixes/improvements
 * Shorten vibration between cycles
 * Refactor code
-* Add done icon when completed
 * Display Save/Discard after completed
 * Configure first cycle type
 
