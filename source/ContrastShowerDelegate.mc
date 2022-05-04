@@ -76,7 +76,8 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
             _inProgress = false;
 
-            // TODO: Show completed icon
+            WatchUi.switchToView(new CompletedView(), new CompletedViewDelegate(), WatchUi.SLIDE_UP);
+
             return;
         }
 
