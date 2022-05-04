@@ -2,6 +2,7 @@
 An application for Garmin watches to take a contrast shower
 
 # Version History
+1.2.0 - Shorten vibration between cycles  
 1.1.0 - Added completed view  
 **1.0.2 - Initial public version**  
 0.4.0 - Added possibility to disable activity recording  
@@ -14,7 +15,6 @@ An application for Garmin watches to take a contrast shower
 * Smart plans (e.g. if whole week without missing, switch to the second cycles regime)
 
 # Fututure bugfixes/improvements
-* Shorten vibration between cycles
 * Refactor code
 * Display Save/Discard after completed
 * Configure first cycle type

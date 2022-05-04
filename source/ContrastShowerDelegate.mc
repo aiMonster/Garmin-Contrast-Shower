@@ -52,7 +52,7 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
         _currentDuration = CyclesManager.getCycleByIndex(0).duration - 1;
         _view.setCyclesValue(_cyclesCount - 1);
         
-        callAttention();
+        callAttention(true);
 
         _timer = new Timer.Timer();
         _timer.start(method(:updateCountdownValue), 1000, true);
@@ -63,7 +63,7 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
         // If its the last tick
         if (isLastCycle && _currentDuration == 0) {
-            callAttention();
+            callAttention(true);
             _view.setTimerValue(0);
 
             _timer.stop();
@@ -83,7 +83,7 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
         // If its the last tick in the cycle
         if (_currentDuration == 0) {
-            callAttention();
+            callAttention(false);
             _currentCycle++;
 
             if(_session) {
@@ -103,8 +103,9 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
     }
 
     // Calls an attention by vibration and backlight
-    function callAttention() as Void {
-        var vibeData = [new Attention.VibeProfile(100, 2000)];
+    function callAttention(long as Boolean) as Void {
+        var duration = long ? 1500 : 500;
+        var vibeData = [new Attention.VibeProfile(50, duration)];
         Attention.vibrate(vibeData);
         Attention.backlight(true);
 
