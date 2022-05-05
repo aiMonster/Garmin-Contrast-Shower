@@ -105,7 +105,7 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
     // Calls an attention by vibration and backlight
     function callAttention(long as Boolean) as Void {
         var duration = long ? 1500 : 500;
-        var vibeData = [new Attention.VibeProfile(50, duration)];
+        var vibeData = [new Attention.VibeProfile(100, duration)];
         Attention.vibrate(vibeData);
         Attention.backlight(true);
 
