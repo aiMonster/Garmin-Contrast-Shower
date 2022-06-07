@@ -15,6 +15,8 @@ An application for Garmin watches to take a contrast shower
 0.1.0 - Initial mvp version
 
 # Future features
+* Adjastable shower switch interval  
+* User predefined and editable presets  
 * Smart plans (e.g. if whole week without missing, switch to the second cycles regime)
 
 # Future bugfixes/improvements
