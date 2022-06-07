@@ -2,7 +2,8 @@
 An application for Garmin watches to take a contrast shower
 
 # Version History
-1.2.1 - Make vibration back stronger
+1.2.2 - Fix layout on Instinct devices  
+1.2.1 - Make vibration back stronger  
 1.2.0 - Shorten vibration between cycles  
 1.1.0 - Added completed view  
 **1.0.2 - Initial public version**  
