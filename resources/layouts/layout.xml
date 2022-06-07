@@ -6,7 +6,6 @@
         y="20%"
         font="Gfx.FONT_MEDIUM"
         justification="Gfx.TEXT_JUSTIFY_CENTER"
-        color="Gfx.COLOR_BLUE"
     />
     <label
         id="current_timer"
@@ -15,7 +14,6 @@
         y="center"
         font="Gfx.FONT_NUMBER_THAI_HOT"
         justification="Gfx.TEXT_JUSTIFY_CENTER"
-        color="Gfx.COLOR_WHITE"
     />
     <label
         id="cylcles_left"
@@ -24,6 +22,5 @@
         y="70%"
         font="Gfx.FONT_SMALL"
         justification="Gfx.TEXT_JUSTIFY_CENTER"
-        color="Gfx.COLOR_WHITE"
     />
 </layout>

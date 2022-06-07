@@ -36,7 +36,7 @@ class NumberPickerFactory extends WatchUi.PickerFactory {
 
         return new WatchUi.Text({
             :text=>text,
-            :color=>Graphics.COLOR_WHITE,
+            :color=> ColorManager.get(Graphics.COLOR_WHITE),
             :font=>Graphics.FONT_NUMBER_MEDIUM,
             :locX=>WatchUi.LAYOUT_HALIGN_CENTER,
             :locY=>WatchUi.LAYOUT_VALIGN_CENTER

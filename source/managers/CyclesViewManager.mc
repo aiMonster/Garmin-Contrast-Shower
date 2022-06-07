@@ -11,7 +11,8 @@ class CyclesViewManager {
     }
 
     static function getTypeColor(waterType as WaterType) {
-        return waterType == WaterType.Hot ? HOT_COLOR : COLD_COLOR;
+        var color = waterType == WaterType.Hot ? HOT_COLOR : COLD_COLOR;
+        return ColorManager.get(color);
     }
 
     static function formatTime(minutes as Number, seconds as Number) as String {

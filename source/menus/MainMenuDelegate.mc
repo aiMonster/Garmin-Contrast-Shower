@@ -35,7 +35,7 @@ class MainMenuViewDelegate extends WatchUi.Menu2InputDelegate {
             callback = method(:updateColdWaterSettings); 
         } else if (id.equals("cycles_count")) {
             label = "CYCLES";
-            color = Graphics.COLOR_WHITE;
+            color = ColorManager.get(Graphics.COLOR_WHITE);
             initialValue = CyclesManager.getCyclesCount();
             showSeconds = false;
             callback = method(:updateCyclesSettings); 
