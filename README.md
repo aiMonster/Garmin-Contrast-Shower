@@ -2,6 +2,7 @@
 An application for Garmin watches to take a contrast shower
 
 # Version History
+1.3.1 - Remove unsupported products  
 1.3.0 - Add Switch cycle when water changes  
 1.2.3 - Fix missing labels on Instinct devices  
 1.2.2 - Fix layout on Instinct devices  
