@@ -1,5 +1,6 @@
 # Garmin Contrast Shower watch application
 An application for Garmin watches to take a contrast shower
+https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 
 # Version History
 1.3.1 - Remove unsupported products  
