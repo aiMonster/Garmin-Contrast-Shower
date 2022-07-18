@@ -24,8 +24,8 @@ class NumberPicker extends WatchUi.Picker {
     
         var text = new WatchUi.Text({
             :text=> showSecondsLbl ? "sec" : "",
-            :color=>Graphics.COLOR_WHITE,
-            :locY=>WatchUi.LAYOUT_VALIGN_CENTER
+            :color=> ColorManager.get(Graphics.COLOR_WHITE),
+            :locY=> WatchUi.LAYOUT_VALIGN_CENTER
         });
 
         Picker.initialize({
@@ -39,7 +39,7 @@ class NumberPicker extends WatchUi.Picker {
     //! Update the view
     //! @param dc Device Context
     public function onUpdate(dc as Dc) as Void {
-        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+        dc.setColor(ColorManager.get(Graphics.COLOR_BLACK), ColorManager.get(Graphics.COLOR_BLACK));
         dc.clear();
         Picker.onUpdate(dc);
     }

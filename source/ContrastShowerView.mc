@@ -1,4 +1,5 @@
 import Toybox.WatchUi;
+import Toybox.Graphics;
 
 class ContrastShowerView extends WatchUi.View {
     private var _typeTitleElement;
@@ -17,6 +18,10 @@ class ContrastShowerView extends WatchUi.View {
         _typeTitleElement = findDrawableById("type_title");
         _currentTimerElement = findDrawableById("current_timer");
         _cylclesLeftElement = findDrawableById("cylcles_left");
+
+        _typeTitleElement.setColor(ColorManager.get(Graphics.COLOR_BLUE));
+        _currentTimerElement.setColor(ColorManager.get(Graphics.COLOR_WHITE));
+        _cylclesLeftElement.setColor(ColorManager.get(Graphics.COLOR_WHITE));
     }
 
     // Called when this View is brought to the foreground. Restore

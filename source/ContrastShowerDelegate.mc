@@ -6,6 +6,10 @@ import Toybox.Timer;
 import Toybox.ActivityRecording;
 
 class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
+    private static var LONG_DURATION = 1500;
+    private static var MIDDLE_DURATION = 700;
+    private static var SHORT_DURATION = 250;
+
     private var _view = getView();
     private var _session as Session?;
     private var _timer;
@@ -47,12 +51,13 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
     // Starts countdown
     function startCountdown() {
         _currentCycle = 0;
-        _cyclesCount = CyclesManager.getCyclesCount();
 
-        _currentDuration = CyclesManager.getCycleByIndex(0).duration - 1;
-        _view.setCyclesValue(_cyclesCount - 1);
-        
-        callAttention(true);
+        _cyclesCount = (CyclesManager.getCyclesCount() * 2) - 1;
+
+        _currentDuration = CyclesManager.getCycleByIndex(_currentCycle).duration - 1;
+        updateCyclesValue();
+
+        callAttention(LONG_DURATION, true);
 
         _timer = new Timer.Timer();
         _timer.start(method(:updateCountdownValue), 1000, true);
@@ -63,7 +68,7 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
         // If its the last tick
         if (isLastCycle && _currentDuration == 0) {
-            callAttention(true);
+            callAttention(LONG_DURATION, true);
             _view.setTimerValue(0);
 
             _timer.stop();
@@ -83,16 +88,19 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
         // If its the last tick in the cycle
         if (_currentDuration == 0) {
-            callAttention(false);
             _currentCycle++;
 
             if(_session) {
                 _session.addLap();
             }
-            
-            var cycle = CyclesManager.getCycleByIndex(_currentCycle);
 
-            _view.setCyclesValue(_cyclesCount - _currentCycle - 1);
+            var cycle = CyclesManager.getCycleByIndex(_currentCycle);
+            var afterSwitch = cycle.waterType != WaterType.Switch;
+
+            updateCyclesValue();
+
+            callAttention(afterSwitch ? SHORT_DURATION : MIDDLE_DURATION, !afterSwitch);
+
             _view.setWaterTypeValue(cycle.waterType);
 
             _currentDuration = cycle.duration;
@@ -102,12 +110,15 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
         _currentDuration--;
     }
 
+    function updateCyclesValue() as Void {
+        _view.setCyclesValue((_cyclesCount - _currentCycle - 1) / 2);
+    }
+
     // Calls an attention by vibration and backlight
-    function callAttention(long as Boolean) as Void {
-        var duration = long ? 1500 : 500;
-        var vibeData = [new Attention.VibeProfile(50, duration)];
+    function callAttention(duration as Number, backlight as Boolean) as Void {
+        var vibeData = [new Attention.VibeProfile(100, duration)];
         Attention.vibrate(vibeData);
-        Attention.backlight(true);
+        Attention.backlight(backlight);
 
         new Timer.Timer().start(method(:turnOffBacklight), 3000, false);
     }

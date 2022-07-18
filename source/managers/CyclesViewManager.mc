@@ -3,15 +3,32 @@ import Toybox.Graphics;
 class CyclesViewManager {
     private static var HOT_TITLE = "HOT";
     private static var COLD_TITLE = "COLD";
+    private static var SWITCH_TITLE = "SWITCH";
+
     private static var HOT_COLOR = Graphics.COLOR_DK_RED;
     private static var COLD_COLOR = Graphics.COLOR_BLUE;
+    private static var SWITCH_COLOR = Graphics.COLOR_ORANGE;
 
     static function getTypeLabel(waterType as WaterType) as String {
-        return waterType == WaterType.Hot ? HOT_TITLE : COLD_TITLE;
+        switch(waterType) {
+            case WaterType.Hot:
+                return HOT_TITLE;
+            case WaterType.Cold:
+                return COLD_TITLE;
+            case WaterType.Switch:
+                return SWITCH_TITLE;
+        }
     }
 
     static function getTypeColor(waterType as WaterType) {
-        return waterType == WaterType.Hot ? HOT_COLOR : COLD_COLOR;
+        switch(waterType) {
+            case WaterType.Hot:
+                return ColorManager.get(HOT_COLOR);
+            case WaterType.Cold:
+                return ColorManager.get(COLD_COLOR);
+            case WaterType.Switch:
+                return ColorManager.get(SWITCH_COLOR);
+        }
     }
 
     static function formatTime(minutes as Number, seconds as Number) as String {

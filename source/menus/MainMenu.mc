@@ -22,8 +22,11 @@ class MainMenu {
             case "cold_duration":
                 _menu.getItem(1).setSubLabel(value.toString() + "sec");
                 break;
+            case "switch_duration":
+                _menu.getItem(2).setSubLabel(value.toString() + "sec");
+                break;
             case "cycles_count":
-                _menu.getItem(2).setSubLabel(value.toString());
+                _menu.getItem(3).setSubLabel(value.toString());
                 break;
         }
     }
@@ -33,10 +36,12 @@ class MainMenu {
 
         var hotDurationLbl = CyclesManager.getCycleDuration(WaterType.Hot).toString() + "sec";
         var coldDurationLbl = CyclesManager.getCycleDuration(WaterType.Cold).toString() + "sec";
+        var swtichDurationLbl = CyclesManager.getCycleDuration(WaterType.Switch).toString() + "sec";
         var cyclesCountLbl = CyclesManager.getCyclesCount().toString();
    
         _menu.addItem(new WatchUi.MenuItem("Hot duration", hotDurationLbl, "hot_duration", null));
         _menu.addItem(new WatchUi.MenuItem("Cold duration", coldDurationLbl, "cold_duration", null));
+        _menu.addItem(new WatchUi.MenuItem("Switch duration", swtichDurationLbl, "switch_duration", null));
         _menu.addItem(new WatchUi.MenuItem("Cycles", cyclesCountLbl, "cycles_count", null));
         _menu.addItem(new WatchUi.ToggleMenuItem(
             "Record activity", 
