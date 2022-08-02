@@ -19,7 +19,6 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 0.1.0 - Initial mvp version
 
 # Future features
-* Adjastable shower switch interval  
 * User predefined and editable presets  
 * Smart plans (e.g. if whole week without missing, switch to the second cycles regime)
 
