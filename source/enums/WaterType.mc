@@ -1,6 +1,7 @@
 class WaterType {
     enum {
         Cold,
-        Hot
+        Hot,
+        Switch
     }
 }

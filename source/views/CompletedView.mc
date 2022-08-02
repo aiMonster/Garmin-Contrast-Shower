@@ -1,4 +1,5 @@
 import Toybox.WatchUi;
+import Toybox.Graphics;
 
 class CompletedView extends WatchUi.View {
     // Constructor
@@ -9,6 +10,9 @@ class CompletedView extends WatchUi.View {
     // Load your resources here
     function onLayout(dc as Dc) as Void {
         setLayout(Rez.Layouts.CompletedLayout(dc));
+
+        findDrawableById("completed_lbl").setColor(ColorManager.get(Graphics.COLOR_GREEN));
+        findDrawableById("tooltip_lbl").setColor(ColorManager.get(Graphics.COLOR_WHITE));
     }
 
     // Update the view

@@ -1,1 +1,4 @@
 project.manifest = manifest.xml
+
+base.excludeAnnotations = multipleColorVersion
+semioctagon.excludeAnnotations = singleColorVersion

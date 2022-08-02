@@ -33,9 +33,15 @@ class MainMenuViewDelegate extends WatchUi.Menu2InputDelegate {
             initialValue = CyclesManager.getCycleDuration(WaterType.Cold);
             showSeconds = true;
             callback = method(:updateColdWaterSettings); 
+        } else if(id.equals("switch_duration")) {
+            label = CyclesViewManager.getTypeLabel(WaterType.Switch);
+            color = CyclesViewManager.getTypeColor(WaterType.Switch);
+            initialValue = CyclesManager.getCycleDuration(WaterType.Switch);
+            showSeconds = true;
+            callback = method(:updateSwitchWaterSettings); 
         } else if (id.equals("cycles_count")) {
             label = "CYCLES";
-            color = Graphics.COLOR_WHITE;
+            color = ColorManager.get(Graphics.COLOR_WHITE);
             initialValue = CyclesManager.getCyclesCount();
             showSeconds = false;
             callback = method(:updateCyclesSettings); 
@@ -55,6 +61,11 @@ class MainMenuViewDelegate extends WatchUi.Menu2InputDelegate {
     function updateColdWaterSettings(value as Number) as Void {
         _mainMenuView.updateSublabel("cold_duration", value);
         CyclesManager.setCycleDuration(WaterType.Cold, value);
+    }
+
+    function updateSwitchWaterSettings(value as Number) as Void {
+        _mainMenuView.updateSublabel("switch_duration", value);
+        CyclesManager.setCycleDuration(WaterType.Switch, value);
     }
 
     function updateCyclesSettings(value as Number) as Void {

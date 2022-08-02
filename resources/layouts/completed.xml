@@ -6,15 +6,13 @@
         y="center"
         font="Gfx.FONT_LARGE"
         justification="Gfx.TEXT_JUSTIFY_CENTER"
-        color="Gfx.COLOR_GREEN"
     />
     <label
         id="tooltip_lbl"
         text="Press start/stop to exit"
         x="center"
-        y="140"
+        y="60%"
         font="Gfx.FONT_XTINY"
         justification="Gfx.TEXT_JUSTIFY_CENTER"
-        color="Gfx.COLOR_WHITE"
     />
 </layout>
