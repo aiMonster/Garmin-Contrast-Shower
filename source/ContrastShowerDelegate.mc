@@ -48,6 +48,17 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
         return true;
     }
 
+
+    // On Back button click
+    function onBack() as Boolean {
+        if(_session) {
+            _session.discard();
+            _session = null;
+        }
+
+        return false;
+    }
+
     // Starts countdown
     function startCountdown() {
         _currentCycle = 0;

@@ -3,6 +3,7 @@ An application for Garmin watches to take a contrast shower
 https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 
 # Version History
+1.3.2 - Do not save record if user exits during activity  
 1.3.1 - Remove unsupported products  
 1.3.0 - Add Switch cycle when water changes  
 1.2.3 - Fix missing labels on Instinct devices  
