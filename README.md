@@ -3,6 +3,7 @@ An application for Garmin watches to take a contrast shower
 https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 
 # Version History
+1.4.0 - Add Save/Discard actions after activity completed  
 1.3.2 - Do not save record if user exits during activity  
 1.3.1 - Remove unsupported products  
 1.3.0 - Add Switch cycle when water changes  
@@ -18,14 +19,11 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 0.1.1 - Moved cycles and view operations to the separate managers  
 0.1.0 - Initial mvp version
 
-# Future features
+# Future enhancements
 * User predefined and editable presets  
 * Smart plans (e.g. if whole week without missing, switch to the second cycles regime)
-
-# Future bugfixes/improvements
-* Refactor code
-* Display Save/Discard after completed
 * Configure first cycle type
+* Refactor code
 
 # Local set up
 Use Visual Studio Code and Monkey C plugin

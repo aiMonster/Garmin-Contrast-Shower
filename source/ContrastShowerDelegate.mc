@@ -3,7 +3,6 @@ import Toybox.WatchUi;
 import Toybox.System;
 import Toybox.Attention;
 import Toybox.Timer;
-import Toybox.ActivityRecording;
 
 class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
     private static var LONG_DURATION = 1500;
@@ -11,7 +10,6 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
     private static var SHORT_DURATION = 250;
 
     private var _view = getView();
-    private var _session as Session?;
     private var _timer;
 
     private var _inProgress = false;
@@ -38,8 +36,7 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
             _inProgress = true;
 
             if (ActivityManager.getRecordActivityFlag()) {
-                _session = ActivityRecording.createSession({:name=>"Contrast Shower", :sport=>ActivityRecording.SPORT_GENERIC});
-                _session.start();
+                ActivityManager.startSession();
             }
             
             startCountdown();
@@ -51,10 +48,7 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
     // On Back button click
     function onBack() as Boolean {
-        if(_session) {
-            _session.discard();
-            _session = null;
-        }
+        ActivityManager.discardSession();
 
         return false;
     }
@@ -84,15 +78,12 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
             _timer.stop();
 
-            if(_session) {
-                _session.stop();
-                _session.save();
-                _session = null;
-            }
+            ActivityManager.stopSession();
 
             _inProgress = false;
 
-            WatchUi.switchToView(new CompletedView(), new CompletedViewDelegate(), WatchUi.SLIDE_UP);
+            var completedView = new CompletedView();
+            WatchUi.switchToView(completedView, new CompletedViewDelegate(completedView), WatchUi.SLIDE_UP);
 
             return;
         }
@@ -101,9 +92,7 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
         if (_currentDuration == 0) {
             _currentCycle++;
 
-            if(_session) {
-                _session.addLap();
-            }
+            ActivityManager.addLap();
 
             var cycle = CyclesManager.getCycleByIndex(_currentCycle);
             var afterSwitch = cycle.waterType != WaterType.Switch;
