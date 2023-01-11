@@ -20,7 +20,7 @@ class NumberPicker extends WatchUi.Picker {
             :locY=>WatchUi.LAYOUT_VALIGN_BOTTOM
         });
         
-        var factories = [new NumberPickerFactory(0, 99, 1)];
+        var factories = [new NumberPickerFactory(0, 999, 1)];
     
         var text = new WatchUi.Text({
             :text=> showSecondsLbl ? "sec" : "",
