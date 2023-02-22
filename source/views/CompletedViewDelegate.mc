@@ -12,10 +12,8 @@ class CompletedViewDelegate extends WatchUi.BehaviorDelegate {
 
     // On Select button click
     function onSelect() as Boolean {
-        if (ActivityManager.getRecordActivityFlag()) {
-            handleSession();
-        }
-    
+        handleSession();
+
         WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
         
         return true;

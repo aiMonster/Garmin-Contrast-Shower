@@ -82,9 +82,14 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
             _inProgress = false;
 
-            var completedView = new CompletedView();
-            WatchUi.switchToView(completedView, new CompletedViewDelegate(completedView), WatchUi.SLIDE_UP);
-
+            if (ActivityManager.getRecordActivityFlag()) {
+                var completedView = new CompletedView();
+                WatchUi.switchToView(completedView, new CompletedViewDelegate(completedView), WatchUi.SLIDE_UP);
+            } else {
+                var completedView = new CompletedPlainView();
+                WatchUi.switchToView(completedView, new CompletedPlainViewDelegate(completedView), WatchUi.SLIDE_UP);
+            }
+            
             return;
         }
 

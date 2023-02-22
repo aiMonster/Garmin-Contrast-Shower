@@ -5,6 +5,8 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 ![Samples](screenshots/cover.png)
 
 # Version History
+1.4.2 - Add separate Completed screen to be compatible with Instinct devices  
+1.4.1 - Increase max cycle duration from 99 to 999 seconds  
 1.4.0 - Add Save/Discard actions after activity completed  
 1.3.2 - Do not save record if user exits during activity  
 1.3.1 - Remove unsupported products  

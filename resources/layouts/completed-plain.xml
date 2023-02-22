@@ -1,4 +1,4 @@
-<layout id="CompletedLayout">
+<layout id="CompletedPlainLayout">
     <label
         id="completed_lbl"
         text="COMPLETED"
@@ -7,20 +7,11 @@
         font="Gfx.FONT_LARGE"
         justification="Gfx.TEXT_JUSTIFY_CENTER"
     />
-    <label 
-        id="active_action"
-        text="Save"
+    <label
+        id="tooltip_lbl"
+        text="Press start/stop to exit"
         x="center"
         y="60%"
-        font="Gfx.FONT_SMALL"
-        justification="Gfx.TEXT_JUSTIFY_CENTER"
-    />
-    <drawable id="actions_split_line" />
-     <label 
-        id="secondary_action"
-        text="Discard"
-        x="center"
-        y="73%"
         font="Gfx.FONT_XTINY"
         justification="Gfx.TEXT_JUSTIFY_CENTER"
     />
