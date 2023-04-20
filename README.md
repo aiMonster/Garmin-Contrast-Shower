@@ -1,10 +1,12 @@
 # Garmin Contrast Shower watch application
+
 An application for Garmin watches to take a contrast shower  
 https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 
 ![Samples](screenshots/cover.png)
 
 # Version History
+
 1.4.2 - Add separate Completed screen to be compatible with Instinct devices  
 1.4.1 - Increase max cycle duration from 99 to 999 seconds  
 1.4.0 - Add Save/Discard actions after activity completed  
@@ -24,16 +26,21 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 0.1.0 - Initial mvp version
 
 # Future enhancements
-* User predefined and editable presets  
-* Smart plans (e.g. if whole week without missing, switch to the second cycles regime)
-* Configure first cycle type
-* Refactor code
+
+- Possibility to manually control cycles by Lap button
+- Possibility to save activity in the middle
+- User predefined and editable presets
+- Smart plans (e.g. if whole week without missing, switch to the second cycles regime)
+- Configure first cycle type
+- Refactor code
 
 # Local set up
+
 Use Visual Studio Code and Monkey C plugin
 
 Side Loading an App:
-  1. Use Ctrl + Shift + P (Command + Shift + P on the Mac) to summon the command palette
-  2. In the command palette type “Build for Device” and select Monkey C: Build for Device
-  3. Select the product you wish to build for
-  4. Copy the generated PRG files to your device’s GARMIN/APPS directory
+
+1. Use Ctrl + Shift + P (Command + Shift + P on the Mac) to summon the command palette
+2. In the command palette type “Build for Device” and select Monkey C: Build for Device
+3. Select the product you wish to build for
+4. Copy the generated PRG files to your device’s GARMIN/APPS directory
