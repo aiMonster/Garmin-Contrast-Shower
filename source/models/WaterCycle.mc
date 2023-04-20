@@ -1,6 +1,6 @@
 class WaterCycle {
     var waterType as WaterType;
-    var duration as Number;
+    var duration;
 
     function initialize(cWaterType, cDuartion) {
         waterType = cWaterType;

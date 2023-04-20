@@ -53,22 +53,22 @@ class MainMenuViewDelegate extends WatchUi.Menu2InputDelegate {
         WatchUi.pushView(picker, delegate, WatchUi.SLIDE_IMMEDIATE);
     }
 
-    function updateHotWaterSettings(value as Number) as Void {
+    function updateHotWaterSettings(value) as Void {
         _mainMenuView.updateSublabel("hot_duration", value);
         CyclesManager.setCycleDuration(WaterType.Hot, value);
     }
 
-    function updateColdWaterSettings(value as Number) as Void {
+    function updateColdWaterSettings(value) as Void {
         _mainMenuView.updateSublabel("cold_duration", value);
         CyclesManager.setCycleDuration(WaterType.Cold, value);
     }
 
-    function updateSwitchWaterSettings(value as Number) as Void {
+    function updateSwitchWaterSettings(value) as Void {
         _mainMenuView.updateSublabel("switch_duration", value);
         CyclesManager.setCycleDuration(WaterType.Switch, value);
     }
 
-    function updateCyclesSettings(value as Number) as Void {
+    function updateCyclesSettings(value) as Void {
         _mainMenuView.updateSublabel("cycles_count", value);
         CyclesManager.setCyclesCount(value);
     }

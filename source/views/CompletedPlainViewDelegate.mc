@@ -7,7 +7,7 @@ class CompletedPlainViewDelegate extends WatchUi.BehaviorDelegate {
     }
 
     // On Select button click
-    function onSelect() as Boolean {    
+    function onSelect() {    
         WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
         
         return true;

@@ -11,7 +11,7 @@ class CompletedViewDelegate extends WatchUi.BehaviorDelegate {
     }
 
     // On Select button click
-    function onSelect() as Boolean {
+    function onSelect() {
         handleSession();
 
         WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
@@ -20,12 +20,12 @@ class CompletedViewDelegate extends WatchUi.BehaviorDelegate {
     }
 
     // On Down button click
-    function onNextPage() as Boolean {
+    function onNextPage() {
         updateActiveAction();
     }
 
     // On Up button click
-    function onPreviousPage() as Boolean {
+    function onPreviousPage() {
         updateActiveAction();
     }
 

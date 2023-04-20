@@ -10,7 +10,7 @@ class ActivityManager {
     }
 
     // Set Record Activity flag value
-    static function setRecordActivityFlag(enabled as Boolean) {
+    static function setRecordActivityFlag(enabled) {
         return Application.Properties.setValue("recordActivity", enabled);
     }
 

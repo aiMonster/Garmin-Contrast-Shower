@@ -48,7 +48,7 @@ class ContrastShowerView extends WatchUi.View {
     }
 
     // Updates cycles value on the view
-    function setCyclesValue(cycles as Number) as Void {
+    function setCyclesValue(cycles) as Void {
         var formattedValue = CyclesViewManager.formatCycles(cycles);
         _cylclesLeftElement.setText(formattedValue);
 
@@ -67,7 +67,7 @@ class ContrastShowerView extends WatchUi.View {
     }
 
     // Updates timer value on the view
-    function setTimerValue(value as Number) as Void {
+    function setTimerValue(value) as Void {
         var current = CyclesViewManager.formatTime(value/60, value%60);
         _currentTimerElement.setText(current);
 
