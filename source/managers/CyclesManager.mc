@@ -2,7 +2,7 @@ import Toybox.Application;
 
 class CyclesManager {
     // HOT[0] - SWITCH[1] - COLD[2] - SWITCH[3] - HOT[4] - etc
-    static function getCycleByIndex(index as Number) as WaterCycle {
+    static function getCycleByIndex(index) {
         var waterType;
 
         if (index % 4 == 0) {

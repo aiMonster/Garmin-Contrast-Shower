@@ -9,7 +9,7 @@ class CyclesViewManager {
     private static var COLD_COLOR = Graphics.COLOR_BLUE;
     private static var SWITCH_COLOR = Graphics.COLOR_ORANGE;
 
-    static function getTypeLabel(waterType as WaterType) as String {
+    static function getTypeLabel(waterType) {
         switch(waterType) {
             case WaterType.Hot:
                 return HOT_TITLE;
@@ -31,12 +31,12 @@ class CyclesViewManager {
         }
     }
 
-    static function formatTime(minutes as Number, seconds as Number) as String {
+    static function formatTime(minutes, seconds) {
         var secondsFormatted = seconds > 9 ? seconds.toString() : "0" + seconds.toString();
         return minutes.toString() + ":" + secondsFormatted;
     }
 
-    static function formatCycles(cycles as Number) as String {
+    static function formatCycles(cycles) {
         var multipleSign = cycles == 1 ? "" : "s";
         return cycles.toString() + " cycle" + multipleSign + " left";
     }

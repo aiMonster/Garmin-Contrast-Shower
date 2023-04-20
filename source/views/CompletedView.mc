@@ -36,7 +36,7 @@ class CompletedView extends WatchUi.View {
     }
 
     // Set selected action if activity has been recorder
-    function setSaveAsActiveAction(saveSelected as Boolean) as Void {
+    function setSaveAsActiveAction(saveSelected) as Void {
         _activeActionElement.setText(saveSelected ? "Save" : "Discard");
         _secondaryActionElement.setText(saveSelected ? "Discard" : "Save");
         
