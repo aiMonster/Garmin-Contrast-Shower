@@ -1,5 +1,5 @@
 <properties>
-    <property id="appVersion" type="string">1.4.3</property>
+    <property id="appVersion" type="string">1.4.4</property>
     <property id="cyclesCount" type="number">6</property>
     <property id="hotDuration" type="number">30</property>
     <property id="coldDuration" type="number">30</property>
