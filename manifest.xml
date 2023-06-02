@@ -37,6 +37,7 @@
       <iq:product id="fenix5xplus"/>
       <iq:product id="fenix6"/>
       <iq:product id="fenix6pro"/>
+      <iq:product id="fenix6prosystem5preview"/>
       <iq:product id="fenix6s"/>
       <iq:product id="fenix6spro"/>
       <iq:product id="fenix6xpro"/>
@@ -50,6 +51,7 @@
       <iq:product id="fr255m"/>
       <iq:product id="fr255s"/>
       <iq:product id="fr255sm"/>
+      <iq:product id="fr265"/>
       <iq:product id="fr55"/>
       <iq:product id="fr645"/>
       <iq:product id="fr645m"/>
@@ -58,6 +60,8 @@
       <iq:product id="fr935"/>
       <iq:product id="fr945"/>
       <iq:product id="fr945lte"/>
+      <iq:product id="fr955"/>
+      <iq:product id="fr965"/>
       <iq:product id="instinct2"/>
       <iq:product id="instinct2s"/>
       <iq:product id="legacyherocaptainmarvel"/>
@@ -76,6 +80,7 @@
       <iq:product id="venu2"/>
       <iq:product id="venu2plus"/>
       <iq:product id="venu2s"/>
+      <iq:product id="venu2system5preview"/>
       <iq:product id="venud"/>
       <iq:product id="venusq"/>
       <iq:product id="venusqm"/>

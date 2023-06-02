@@ -7,6 +7,7 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 
 # Version History
 
+1.4.5 - Add support of new watches  
 1.4.4 - Add support of Forerunner 255s/255s Music  
 1.4.3 - Add support of Forerunner 255/255 Music  
 1.4.2 - Add separate Completed screen to be compatible with Instinct devices  
