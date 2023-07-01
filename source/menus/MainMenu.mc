@@ -50,5 +50,12 @@ class MainMenu {
             ActivityManager.getRecordActivityFlag(),
             null
         ));
+        _menu.addItem(new WatchUi.ToggleMenuItem(
+            "Double click", 
+            {:enabled=>"Yes", :disabled=>"No"},
+            "use_double_click",
+            CyclesManager.getUseDoubleClickFlag(),
+            null
+        ));
     }
 }

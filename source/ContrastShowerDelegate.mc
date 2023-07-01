@@ -8,6 +8,7 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
     private static var LONG_DURATION = 1500;
     private static var MIDDLE_DURATION = 700;
     private static var SHORT_DURATION = 250;
+    private static var MAX_CLICK_INTERVAL_SEC = 1;
 
     private var _view = getView();
     private var _timer;
@@ -18,6 +19,9 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
     private var _currentCycle;
     private var _cyclesCount;
+
+    private var _lastSelectBtnClick = null;
+    private var _lastBackBtnClick = null;
 
     // Constructor
     function initialize() {
@@ -32,6 +36,13 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
     // On Select button click
     function onSelect() as Boolean {
+        var doubleClick = _lastBackBtnClick != null && Time.now().subtract(_lastBackBtnClick).value() <= MAX_CLICK_INTERVAL_SEC;
+
+        if (CyclesManager.getUseDoubleClickFlag() && !doubleClick) {
+            _lastBackBtnClick = Time.now();
+            return true;
+        }
+
         if (_inProgress == false) {
             _inProgress = true;
 
@@ -48,6 +59,13 @@ class ContrastShowerDelegate extends WatchUi.BehaviorDelegate {
 
     // On Back button click
     function onBack() as Boolean {
+        var doubleClick = _lastBackBtnClick != null && Time.now().subtract(_lastBackBtnClick).value() <= MAX_CLICK_INTERVAL_SEC;
+
+        if (CyclesManager.getUseDoubleClickFlag() && !doubleClick) {
+            _lastBackBtnClick = Time.now();
+            return true;
+        }
+
         ActivityManager.discardSession();
 
         return false;

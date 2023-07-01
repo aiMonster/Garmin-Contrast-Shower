@@ -48,4 +48,12 @@ class CyclesManager {
                 return "switchDuration";
         }
     }
+
+    static function getUseDoubleClickFlag() {
+        return Application.Properties.getValue("useDoubleClick");
+    }
+
+    static function setUseDoubleClickFlag(value) {
+        Application.Properties.setValue("useDoubleClick", value);
+    }
 }

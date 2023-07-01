@@ -1,8 +1,9 @@
 <properties>
-    <property id="appVersion" type="string">1.4.5</property>
+    <property id="appVersion" type="string">1.5.0</property>
     <property id="cyclesCount" type="number">6</property>
     <property id="hotDuration" type="number">30</property>
     <property id="coldDuration" type="number">30</property>
     <property id="switchDuration" type="number">10</property>
     <property id="recordActivity" type="boolean">true</property>
+    <property id="useDoubleClick" type="boolean">false</property>
 </properties>

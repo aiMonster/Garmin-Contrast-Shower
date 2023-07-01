@@ -18,6 +18,11 @@ class MainMenuViewDelegate extends WatchUi.Menu2InputDelegate {
             return;
         }
 
+        if (id.equals("use_double_click")) {
+            CyclesManager.setUseDoubleClickFlag(item.isEnabled());
+            return;
+        }
+
         var label = null, color = null, initialValue = null, callback = null;
         var showSeconds = false;
 
