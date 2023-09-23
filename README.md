@@ -7,6 +7,7 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 
 # Version History
 
+1.5.1 - Add support of new devices  
 1.5.0 - Add Double Click option  
 1.4.5 - Add support of new watches  
 1.4.4 - Add support of Forerunner 255s/255s Music  
