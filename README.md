@@ -39,6 +39,7 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 - Configure first cycle type
 - Refactor code
 - Add the possibility to set a single cycle and use only COLD type for Cold Shower
+- Add the possibility to select the activity type
 
 # Local set up
 
