@@ -38,6 +38,7 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 - Smart plans (e.g. if whole week without missing, switch to the second cycles regime)
 - Configure first cycle type
 - Refactor code
+- Add the possibility to set a single cycle and use only COLD type for Cold Shower
 
 # Local set up
 
