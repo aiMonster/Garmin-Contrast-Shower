@@ -32,14 +32,18 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 
 # Future enhancements
 
+High priority:
+- Add the possibility to set a single cycle and use only COLD type for Cold Shower
+- Add the possibility to select the activity type
+- Fix touchsceen issue
+- Configure first cycle type
+
+Low priority:
 - Possibility to manually control cycles by Lap button
 - Possibility to save activity in the middle
 - User predefined and editable presets
 - Smart plans (e.g. if whole week without missing, switch to the second cycles regime)
-- Configure first cycle type
 - Refactor code
-- Add the possibility to set a single cycle and use only COLD type for Cold Shower
-- Add the possibility to select the activity type
 
 # Local set up
 
