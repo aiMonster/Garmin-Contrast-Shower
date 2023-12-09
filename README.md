@@ -35,10 +35,11 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 High priority:
 - Add the possibility to set a single cycle and use only COLD type for Cold Shower
 - Add the possibility to select the activity type
-- Fix touchsceen issue
+- Fix touchscreen issue
 - Configure first cycle type
 
 Low priority:
+- Add summary/confirmation screen after Save
 - Possibility to manually control cycles by Lap button
 - Possibility to save activity in the middle
 - User predefined and editable presets
