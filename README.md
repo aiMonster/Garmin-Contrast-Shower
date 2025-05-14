@@ -37,6 +37,7 @@ High priority:
 - Add the possibility to select the activity type
 - Fix touchscreen issue
 - Configure first cycle type
+- Live HR and Time of the day
 
 Low priority:
 - Add summary/confirmation screen after Save
