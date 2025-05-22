@@ -44,8 +44,10 @@ High priority:
 
 Low priority:
 
+- Temperature (graph, min, max)
 - Add summary/confirmation screen after Save
-- Possibility to manually control cycles by Lap button
+- Stopwatch mode
+- Possibility to manually control cycles by Lap button (Pause & Resume & Prolong)
 - Possibility to save activity in the middle
 - User predefined and editable presets
 - Smart plans (e.g. if whole week without missing, switch to the second cycles regime)
