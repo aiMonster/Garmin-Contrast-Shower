@@ -31,4 +31,14 @@
         font="Gfx.FONT_SMALL"
         justification="Gfx.TEXT_JUSTIFY_CENTER"
     />
+    <bitmap id="heart_rate_icon" x="7%" y="53%" filename="../drawables/heart-rate.png"></bitmap>
+
+    <label
+        id="heart_rate"
+        text="--"
+        x="11%"
+        y="40%"
+        font="Gfx.FONT_SMALL"
+        justification="Gfx.TEXT_JUSTIFY_CENTER"
+    />
 </layout>

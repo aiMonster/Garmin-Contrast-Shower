@@ -8,6 +8,7 @@ class ContrastShowerView extends WatchUi.View {
   private var _currentTimerElement;
   private var _cylclesLeftElement;
   private var _todElement;
+  private var _heartRateElement;
 
   private var _is24Hour;
 
@@ -26,11 +27,13 @@ class ContrastShowerView extends WatchUi.View {
     _currentTimerElement = findDrawableById("current_timer");
     _cylclesLeftElement = findDrawableById("cylcles_left");
     _todElement = findDrawableById("time_of_the_day");
+    _heartRateElement = findDrawableById("heart_rate");
 
     _typeTitleElement.setColor(ColorManager.get(Graphics.COLOR_BLUE));
     _currentTimerElement.setColor(ColorManager.get(Graphics.COLOR_WHITE));
     _cylclesLeftElement.setColor(ColorManager.get(Graphics.COLOR_WHITE));
     _todElement.setColor(ColorManager.get(Graphics.COLOR_WHITE));
+    _heartRateElement.setColor(ColorManager.get(Graphics.COLOR_WHITE));
 
     updateDynamicData();
 
@@ -92,9 +95,17 @@ class ContrastShowerView extends WatchUi.View {
   }
 
   function updateDynamicData() {
+    updateSensorsData();
     updateDateTime();
 
     WatchUi.requestUpdate();
+  }
+
+  function updateSensorsData() {
+    var heartRate = Activity.getActivityInfo().currentHeartRate;
+    heartRate = heartRate == null ? "--" : heartRate.format("%i");
+
+    _heartRateElement.setText(heartRate);
   }
 
   function updateDateTime() {
