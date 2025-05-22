@@ -7,6 +7,7 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 
 # Version History
 
+1.7.1 - Add support of new devices  
 1.7.0 - Add Heart Rate field  
 1.6.0 - Add Time of the Day field  
 1.5.1 - Add support of new devices  
