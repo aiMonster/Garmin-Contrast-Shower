@@ -22,7 +22,7 @@ class ContrastShowerApp extends Application.AppBase {
 
     _view = new ContrastShowerView(notificationManager);
 
-    return [_view, new ContrastShowerDelegate()] as Array<Views or InputDelegates>;
+    return [_view, new ContrastShowerDelegate(notificationManager)] as Array<Views or InputDelegates>;
   }
 
   // Returns main view instance
