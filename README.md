@@ -38,7 +38,9 @@ https://apps.garmin.com/en-US/apps/9499ec2c-d424-4135-a62d-130956bc1a6f
 
 High priority:
 
-- Add the possibility to set a single cycle and use only COLD type for Cold Shower
+- Add the possibility to skip the Switch cycle
+- Add possibility to select alert type and strength (vibe and tone)
+- Adjust color (on some devices Red is difficult to see)
 - Add the possibility to select the activity type
 - Fix touchscreen issue
 - Configure first cycle type
